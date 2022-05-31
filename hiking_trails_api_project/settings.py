@@ -111,8 +111,6 @@ DATABASES = {
         },
     },
 }
-
-
 # db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'] = dj_database_url.config()
 
@@ -187,7 +185,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ALLOWED_HOSTS = ['snacks-crud-thomas-basham.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://trails-api-thomas-basham.herokuapp.com'
+]
 # Activate Django-Heroku.
 django_heroku.settings(locals())
