@@ -5,13 +5,14 @@
 
     <h1 class="heading">Hiking Trails API!</h1>
 
-<!--    {% for item in object_list %}-->
-<!--        <div class="container">-->
+    {% for item in object_list %}
+        <div class="container">
 
-<!--        <h1>{{ item.name | title }}</h1>-->
-<!--        <img alt="{{ item.name | title}} image" src="{{ item.img_url }}">-->
-<!--        <p style="">{{ item.description | title}}</p>-->
+        <h1>{{ item.trail_name | title }}</h1>
+        <p>{{ item.description | title}}</p>
+        <a href={{ item.google_maps_directions }}> Google Maps Directions</a>
+        <a href={{ item.all_trails_link }}> All Trails Link</a>
 
-<!--        </div>-->
-<!--    {% endfor %}-->
+        </div>
+    {% endfor %}
 {% endblock content %}
