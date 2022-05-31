@@ -17,6 +17,9 @@ import dj_database_url
 import dotenv
 from dotenv import load_dotenv
 
+load_dotenv()  # take environment variables from .env.
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,7 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://thomas-basham.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://trails-api-thomas-basham.herokuapp.com']
 
 
 # Application definition
@@ -98,14 +101,22 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
+        'C'
         'OPTIONS': {
-            'sslmode': 'require',
+            'sslmode': None,
+            # 'CONN_MAX_AGE': '60',
             # 'sslcert': '/path/to/file',
             # 'sslkey': '/path/to/file',
             # 'sslrootcert': '/path/to/file',
         },
     },
 }
+
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'] = dj_database_url.config()
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -143,7 +154,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,"static/"),
+    os.path.join(BASE_DIR, "static/"),
     )
 
 # Default primary key field type

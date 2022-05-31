@@ -23,7 +23,7 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 # collect static files
-RUN python3 manage.py collectstatic --noinput
+#RUN python3 manage.py collectstatic --noinput
 
 
 # add and run as non-root user
