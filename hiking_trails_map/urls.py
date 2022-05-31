@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import HikingTrailsMapView
+from .views import HikingTrailsMapView, maps
 
 urlpatterns = [
-    path('', HikingTrailsMapView.as_view(), name='hiking_trails_map'),
+    path('', maps, name='maps'),
 ]
