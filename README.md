@@ -1,1 +1,7 @@
-# drf-api-permissions-postgres
+# Lab: DRF API Permissions Postgres
+
+**Author:** Thomas Basham
+
+### Resources
+
+

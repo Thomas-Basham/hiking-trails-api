@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import HikingTrails
 
-# Register your models here.
+admin.site.register(HikingTrails)
