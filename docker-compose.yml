@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - DATABASE_URL=postgres://rvubbfolzkgxxt:c4e335922641948445ccf0fae65a30609a60f09c733c47294bb54057afec5098@ec2-3-228-235-79.compute-1.amazonaws.com:5432/d8q3ig13e9droq
+
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - DATABASE_URL=postgres://rvubbfolzkgxxt:c4e335922641948445ccf0fae65a30609a60f09c733c47294bb54057afec5098@ec2-3-228-235-79.compute-1.amazonaws.com:5432/d8q3ig13e9droq
+
+    depends_on:
+      - db
