@@ -9,6 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV DEBUG 0
 
+RUN pip install --upgrade pip
 # install psycopg2
 RUN apk update \
     && apk add --virtual build-essential gcc python3-dev musl-dev \
@@ -16,9 +17,8 @@ RUN apk update \
     && pip install psycopg2
  # install dependencies
 COPY ./requirements.txt .
-RUN pip install --upgrade pip
 RUN pip install --upgrade cython
-#RUN pip3 install numpy pandas
+RUN pip3 install pandas --no-deps
 RUN pip install -r requirements.txt --no-deps
 
 # copy project
