@@ -1,5 +1,6 @@
 # pull official base image
-FROM python:3.9-alpine
+#FROM python:3.9-alpine
+FROM python:3.9.7-slim-bullseye
 
 # set work directory
 WORKDIR /app
@@ -18,7 +19,7 @@ RUN apk update \
  # install dependencies
 COPY ./requirements.txt .
 RUN pip install --upgrade cython
-RUN pip3 install pandas --no-deps
+RUN pip install pandas --no-deps
 RUN pip install -r requirements.txt --no-deps
 
 # copy project
