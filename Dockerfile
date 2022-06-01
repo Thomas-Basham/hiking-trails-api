@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.10.4-alpine
+FROM python:3.10-alpine
 
 # set work directory
 WORKDIR /app
@@ -14,10 +14,10 @@ RUN apk update \
     && apk add --virtual build-essential gcc python3-dev musl-dev \
     && apk add postgresql-dev \
     && pip install psycopg2
-
+RUN apk add py2-numpy@community py-pandas@edge
 # install dependencies
 COPY ./requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 # copy project
 COPY . .
