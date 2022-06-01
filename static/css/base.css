@@ -49,3 +49,10 @@ input[type=text] {
 .button:hover {
     zoom: 1.2;
 }
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 40vh;
+}
