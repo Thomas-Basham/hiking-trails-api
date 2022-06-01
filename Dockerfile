@@ -12,7 +12,6 @@ ENV DEBUG 0
 # install psycopg2
 RUN apk update \
     && apk add --virtual build-essential gcc python3-dev musl-dev \
-    apk add --update --no-cache py3-numpy py3-pandas@testing\
     && apk add postgresql-dev \
     && pip install psycopg2
  # install dependencies
