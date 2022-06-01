@@ -18,9 +18,10 @@ RUN pip install --upgrade pip
 #    && pip install psycopg2
  # install dependencies
 COPY ./requirements.txt .
+RUN pip install psycopg2
 RUN pip install --upgrade cython
-RUN pip install pandas --no-deps
-RUN pip install -r requirements.txt --no-deps
+RUN pip install pandas
+RUN pip install -r requirements.txt
 
 # copy project
 COPY . .
