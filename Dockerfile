@@ -16,9 +16,9 @@ RUN apk update \
     && pip install psycopg2
  # install dependencies
 COPY ./requirements.txt .
-RUN pip3 install pandas numpy
-RUN pip install --upgrade cython
 RUN pip install --upgrade pip
+RUN pip install --upgrade cython
+RUN pip3 install numpy pandas
 RUN pip install -r requirements.txt
 
 # copy project
