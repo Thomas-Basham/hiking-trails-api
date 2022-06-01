@@ -1,6 +1,5 @@
 # pull official base image
-FROM python:3.9-alpine
-
+FROM python:3.10.4-alpine3.16
 # set work directory
 WORKDIR /app
 
@@ -10,6 +9,8 @@ ENV PYTHONUNBUFFERED 1
 ENV DEBUG 0
 
 # install psycopg2
+RUN apk --update add --no-cache g++
+
 RUN apk update \
     && apk add --virtual build-essential gcc python3-dev musl-dev \
     && apk add postgresql-dev \
@@ -18,7 +19,7 @@ RUN apk update \
 COPY ./requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --upgrade cython
-RUN pip3 install pandas numpy
+#RUN pip3 install pandas numpy
 RUN pip install -r requirements.txt
 
 # copy project
