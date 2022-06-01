@@ -8,8 +8,7 @@ import folium
 from folium.plugins import MarkerCluster
 
 
-import os
-import pandas as pd
+
 
 # Create your views here.
 class HikingTrailsMapView(ListView):
