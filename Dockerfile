@@ -12,14 +12,15 @@ ENV DEBUG 0
 
 #RUN pip install --upgrade pip
 # install psycopg2
-RUN && add --virtual build-essential gcc python3-dev musl-dev \
-    && add postgresql-dev \
-    && pip install psycopg2
+RUN update \
+    && apk add --virtual build-essential gcc python3-dev musl-dev \
+    && apk add postgresql-dev \
+    && pip install psycopg2 \
+    && install --disable-pip-version-check --no-build-isolation numpy \
+    && pip install --disable-pip-version-check --no-build-isolation pandas \
  # install dependencies
 COPY ./requirements.txt .
-RUN pip install psycopg2
 RUN pip install --upgrade cython
-RUN pip install pandas
 RUN pip install -r requirements.txt
 
 # copy project
