@@ -12,9 +12,9 @@ ENV DEBUG 0
 
 #RUN pip install --upgrade pip
 # install psycopg2
-RUN apk update \
-    && apk add --virtual build-essential gcc python3-dev musl-dev \
-    && apk add postgresql-dev \
+RUN update \
+    && add --virtual build-essential gcc python3-dev musl-dev \
+    && add postgresql-dev \
     && pip install psycopg2
  # install dependencies
 COPY ./requirements.txt .
