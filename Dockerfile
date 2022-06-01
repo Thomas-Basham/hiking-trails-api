@@ -12,8 +12,7 @@ ENV DEBUG 0
 
 #RUN pip install --upgrade pip
 # install psycopg2
-RUN update \
-    && add --virtual build-essential gcc python3-dev musl-dev \
+RUN && add --virtual build-essential gcc python3-dev musl-dev \
     && add postgresql-dev \
     && pip install psycopg2
  # install dependencies
