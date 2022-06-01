@@ -18,7 +18,7 @@ RUN apk update \
 COPY ./requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --upgrade cython
-RUN pip3 install numpy pandas
+#RUN pip3 install numpy pandas
 RUN pip install -r requirements.txt --no-deps
 
 # copy project
