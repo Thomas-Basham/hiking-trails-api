@@ -9,7 +9,7 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - DATABASE_URL=postgres://rucislogifogih:aa714e266e76cd50208a93aba2951eaa6a9c0cc9a14c1108c9ee4e72cf9a1707@ec2-3-211-221-185.compute-1.amazonaws.com:5432/dvl2c8g6q4r3
+      - DATABASE_URL=postgres://rsrzzuzdyjpftp:3a92e68a8e7f6e3b79ac3968fa9d5d469813aa0e7c6b07c4d71478c95e34e9cb@ec2-54-211-255-161.compute-1.amazonaws.com:5432/d2o8nurlqevsua
 
 
   web:
@@ -24,7 +24,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - DATABASE_URL=postgres://rucislogifogih:aa714e266e76cd50208a93aba2951eaa6a9c0cc9a14c1108c9ee4e72cf9a1707@ec2-3-211-221-185.compute-1.amazonaws.com:5432/dvl2c8g6q4r3
+      - DATABASE_URL=postgres://rsrzzuzdyjpftp:3a92e68a8e7f6e3b79ac3968fa9d5d469813aa0e7c6b07c4d71478c95e34e9cb@ec2-54-211-255-161.compute-1.amazonaws.com:5432/d2o8nurlqevsua
 
     depends_on:
       - db
