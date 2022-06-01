@@ -8,8 +8,6 @@ import folium
 from folium.plugins import MarkerCluster
 
 
-
-
 # Create your views here.
 class HikingTrailsMapView(ListView):
     template_name = 'hiking_trails_map.html'
