@@ -11,8 +11,8 @@ from hiking_trails_api.models import HikingTrails
 
 
 def maps(request):
-    df = read_frame(HikingTrails.objects.all())
     current_user = request.user
+    df = read_frame(HikingTrails.objects.all())
     map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype('float').mean().to_list() )
 
     marker_cluster = MarkerCluster().add_to(map)
@@ -92,6 +92,7 @@ def logout_request(request):
 def add_trail_form(request):
     context = dict(add_trail_form=AddTrailForm())
     context["dataset"] = HikingTrails.objects.all().order_by("-id")
+    context["current_user"] = request.user
     if request.method == 'POST':
         form = AddTrailForm(request.POST, request.FILES)
         context['posted'] = form.instance

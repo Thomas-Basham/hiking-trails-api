@@ -15,25 +15,39 @@
 <body>
 
 
-<a class="btn btn-light float-left m-2 btn-sm"  style="font-size: .5vmax;" href="/admin">Admin Login</a>
+<a class="btn btn-light float-left m-2 btn-sm" style="font-size: .5vmax;" href="/admin">Admin Login</a>
 <br>
 <br>
-    {% for message in messages %}
-        <li {% if message.tags %} class="{{ message.tags }} text-center list-unstyled"{% endif %}>{{ message }}</li>
-    {% endfor %}
-<nav class="mt-1 mb-5" style="margin: 0 auto">
-    <a class="btn btn-info " href="/">Demo</a>
-    <a class="btn btn-info " href="/documentation">Documentation</a>
-    {% if not current_user.is_authenticated %}
-        <a class="btn btn-info" href="{% url 'login' %}">Login/Register</a>
-    {% else %}
-        <a class="btn btn-info" href="{% url 'add_trail_form' %}">Add a Trail</a>
-        <a class="btn btn-info" href="{% url 'logout' %}">Logout</a>
-    {% endif %}
+{% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }} text-center list-unstyled"{% endif %}>{{ message }}</li>
+{% endfor %}
+<nav class="navbar navbar-expand-xl navbar-light mt-1 mb-3" style="margin: 0 auto">
+    <div class="container-fluid">
 
+        <a class=" navbar-brand" href="/">Demo</a>
 
+        <div class="collapse navbar-collapse show" id="navbarToggleExternalContent">
+            <div class="navbar-nav">
+                <a class="nav-link active " href="/documentation">Documentation</a>
+                {% if not current_user.is_authenticated %}
+                    <a class="nav-link active" href="{% url 'login' %}">Login/Register</a>
+                {% else %}
+                    <a class="nav-link active" href="{% url 'add_trail_form' %}">Add a Trail</a>
+                    <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </nav>
 
+
+
 {% block content %}{% endblock content %}
+
+<nav class="navbar fixed-bottom navbar-light bg-light mt-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://github.com/Thomas-Basham/" target="_blank" rel="noreferrer">©Thomas Basham</a>
+    </div>
+</nav>
 </body>
 </html>

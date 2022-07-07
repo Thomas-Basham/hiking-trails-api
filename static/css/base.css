@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 nav {
-    padding-top: 4vh;
+    padding-top: 2vh;
     text-align: center;
+}
+
+a:hover{
+    color: aqua;
 }
 
 
@@ -10,7 +14,7 @@ nav {
 .map-container {
 
     width: 60vw;
-    margin: 0 auto;
+    margin: 0 auto 50px ;
 }
 
 
