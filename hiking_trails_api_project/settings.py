@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "whitenoise.runserver_nostatic", # Use this with whitenoise
     'django.contrib.staticfiles',
 
 
@@ -165,14 +166,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",  # Change from .AllowAny to IsAuthenticated
+        "rest_framework.permissions.AllowAny",  # Change from .AllowAny to IsAuthenticated
     ]
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# Docker
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ************ HEROKU DEPLOYMENT *****************
 
 # This module uses Heroku’s DATABASE_URL variable if it’s on Heroku,
@@ -182,8 +181,9 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

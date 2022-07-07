@@ -1,0 +1,13 @@
+a:hover{
+    color: aqua;
+}
+
+.map-container {
+
+    width: 60vw;
+    margin: 0 auto 50px ;
+}
+
+.docs-content {
+    width: 10vw;
+}

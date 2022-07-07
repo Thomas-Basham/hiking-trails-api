@@ -1,20 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+main {
+    background-color: #0B2B40;
+    margin-bottom: 200px;
+    color: whitesmoke;
 
-nav {
-    padding-top: 2vh;
+}
+.display-3 {
+    color: white;
     text-align: center;
+    font-size: 3rem !important;
+    float: left;
+    padding-left: 10px;
+
 }
-
-a:hover{
-    color: aqua;
-}
-
-
-
 .map-container {
 
-    width: 60vw;
-    margin: 0 auto 50px ;
+    width: 85vw;
+    margin: 50px auto ;
+
+    border-radius: 20px;
 }
 
+iframe {
+        border-radius: 10px;
+        max-height: 70vh;
 
+
+}
+header{
+    background-color: #164773;
+}
+.docs{
+
+    background-color: #1E5959;
+
+    width: 80vw;
+    margin: 20px auto;
+    border: solid #1E5959 45px;
+    border-radius: 30px;
+    padding-inline: 15px;
+}
+
+.docs-content {
+    width: 32%;
+    background-color: #0C7D74;
+    padding: 30px;
+    border: solid #1E5959 10px;
+
+}
+
+.docs-content h4 {
+    margin-top: 10px;
+}
+
+.docs-content .text-light {
+    font-size: 10px;
+}
+
+.nav-bottom {
+    background-color: #164773;
+}
+
+.register-form{
+
+    background-color: #0C7D74;
+    padding-inline: 20px;
+    padding-block: 40px;
+    margin-top: 20px;
+    border: solid #1E5959 45px;
+    border-radius: 30px;
+
+}
+
+.register-form .form-group {
+    padding: 5px;
+    border-radius: 10px;
+    overflow: auto;
+    overflow-wrap: break-word;
+
+}
+
+small{
+    background-color: #1E5959;
+    color: white !important;
+    width: max-content;
+    border-radius: 5px;
+    overflow-wrap: break-word;
+}
+.error {
+    color: red;
+}

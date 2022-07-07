@@ -19,7 +19,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hiking_trails_map.urls')),
-    path("api/v1/hiking_trails/", include("hiking_trails_api.urls")),
+    path("api/v1/hiking-trails/", include("hiking_trails_api.urls")),
     path("api-auth/", include("rest_framework.urls")),
 
 ]

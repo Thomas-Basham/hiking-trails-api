@@ -7,6 +7,6 @@ urlpatterns = [
     path("register", register_request, name="register"),
     path("login", login_request, name="login"),
     path("logout", logout_request, name="logout"),
-    path("add_trail_form", add_trail_form, name="add_trail_form"),
+    path("add-trail-form", add_trail_form, name="add_trail_form"),
     path("documentation", documentation, name="documentation"),
 ]
