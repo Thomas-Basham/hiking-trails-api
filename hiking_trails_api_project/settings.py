@@ -46,13 +46,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
     'rest_framework',
 
     'hiking_trails_api',
 
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
+
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -101,7 +105,6 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'C'
         'OPTIONS': {
             'sslmode': None,
             # 'CONN_MAX_AGE': '60',
@@ -165,6 +168,8 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",  # Change from .AllowAny to IsAuthenticated
     ]
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Docker
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

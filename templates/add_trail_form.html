@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container py-5">
+  <h1>Add a Trail! </h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ add_trail_form|crispy }}
+      <input type="submit" value="Upload">
+
+  </form>
+
+</div>
+
+{% endblock %}
