@@ -107,3 +107,8 @@ class AddTrailForm(ModelForm):
     class Meta:
         model = HikingTrails
         fields = "__all__"
+
+
+def documentation(request):
+    context = dict(current_user=request.user)
+    return render(request, 'documentation.html', context)

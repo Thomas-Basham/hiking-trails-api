@@ -12,9 +12,7 @@
             {{ register_form|crispy }}
             <button class="btn btn-primary" type="submit">Register</button>
         </form>
-        {% for message in messages %}
-            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
+
         <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
     </div>
 
