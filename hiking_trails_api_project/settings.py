@@ -196,3 +196,5 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+X_FRAME_OPTIONS = 'ALLOW-FROM https://thomasbashamportfolio.net'

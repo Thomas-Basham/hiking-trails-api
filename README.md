@@ -2,7 +2,7 @@
 
 **Author:** Thomas Basham
 
-## [Deployed Link](https://trails-api-thomas-basham.herokuapp.com)
+## [trails-api-thomas-basham.herokuapp.com](https://trails-api-thomas-basham.herokuapp.com)
 
 ### Resources
 
