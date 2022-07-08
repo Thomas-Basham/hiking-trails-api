@@ -13,9 +13,9 @@ from hiking_trails_api.models import HikingTrails
 def maps(request):
     current_user = request.user
     df = read_frame(HikingTrails.objects.all())
-    map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype('float').mean().to_list() )
+    map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype('float').mean().to_list())  # Starts zoom at average of lat/lon from pandas
+    marker_cluster = MarkerCluster().add_to(map)  # Start a cluster to add to
 
-    marker_cluster = MarkerCluster().add_to(map)
     for i, r in df.iterrows():
         html = f'''
         <h2 >{r["trail_name"].capitalize()}<h2/>
@@ -24,24 +24,26 @@ def maps(request):
         <a style="color:green" href="{r["all_trails_link"]}" target="_blank">Link to All-Trails site<a/>
         <p >{r["description"]}<p/>
         '''
-        iframe = folium.IFrame(html, width=200, height=300)
-        popup = folium.Popup(iframe)
+        popup = folium.Popup(html, max_width=500)
 
         location = (r["lat"], r["lon"])
 
-        folium.Marker(location=location, tooltip=r["trail_name"].capitalize(), popup=popup).add_to(
-            marker_cluster)
+        folium.Marker(location=location, tooltip=r["trail_name"].capitalize(), popup=popup,
+                      ).add_to(marker_cluster)
 
-    folium.raster_layers.TileLayer('Stamen Terrain').add_to(map)
-    folium.raster_layers.TileLayer('Stamen Watercolor').add_to(map)
-    folium.LayerControl().add_to(map)
     Fullscreen(
         position='topright',
         title='Expand me',
         title_cancel='Exit me',
         force_separate_button=True
     ).add_to(map)
+
+    folium.raster_layers.TileLayer('Stamen Terrain').add_to(map)
+    folium.raster_layers.TileLayer('Stamen Watercolor').add_to(map)
+    folium.LayerControl().add_to(map)
+
     map = map._repr_html_()
+
     context = {
         'map': map,
         'current_user': current_user,

@@ -4,6 +4,7 @@ main {
     color: whitesmoke;
 
 }
+
 .display-3 {
     color: white;
     text-align: center;
@@ -12,27 +13,29 @@ main {
     padding-left: 10px;
 
 }
+
 .map-container {
 
     width: 85vw;
-    margin: 50px auto ;
+    margin: 50px auto;
 
     border-radius: 20px;
+    max-height: 70vh;
 }
 
 iframe {
-        border-radius: 10px;
-        max-height: 70vh;
-
-
+    border-radius: 10px;
+    max-height: 70vh;
+    background: #0B2B40 !important;
+    background-color: #0B2B40 !important;
 }
-header{
+
+header {
     background-color: #164773;
 }
-.docs{
 
+.docs {
     background-color: #1E5959;
-
     width: 80vw;
     margin: 20px auto;
     border: solid #1E5959 45px;
@@ -60,7 +63,7 @@ header{
     background-color: #164773;
 }
 
-.register-form{
+.register-form {
 
     background-color: #0C7D74;
     padding-inline: 20px;
@@ -68,6 +71,7 @@ header{
     margin-top: 20px;
     border: solid #1E5959 45px;
     border-radius: 30px;
+    color: white !important;
 
 }
 
@@ -76,16 +80,26 @@ header{
     border-radius: 10px;
     overflow: auto;
     overflow-wrap: break-word;
+    color: white !important;
 
 }
 
-small{
-    background-color: #1E5959;
+small {
+    background-color: whitesmoke;
     color: white !important;
     width: max-content;
     border-radius: 5px;
     overflow-wrap: break-word;
+    padding: 2px;
+    opacity: .4;
 }
+
 .error {
     color: red;
 }
+
+.btn-green {
+    background-color: #1E5959 !important;
+    color: whitesmoke !important;
+}
+

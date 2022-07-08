@@ -2,22 +2,22 @@
 
 {% block content %}
 
-{% load crispy_forms_tags %}
-  <h1 class="display-3">Add a Trail </h1>
+    {% load crispy_forms_tags %}
+    <h1 class="display-3">Add a Trail </h1>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<div class="container py-5">
+    <div class="container py-5">
 
-  <form method="POST" class="register-form">
-    {% csrf_token %}
-    {{ add_trail_form|crispy }}
+        <form method="POST" class="register-form">
+            {% csrf_token %}
+            {{ add_trail_form|crispy }}
 
-    <button class="btn btn-green" type="submit" style="background-color: #164773;">Upload</button>
+            <button class="btn btn-green" type="submit" >Upload</button>
 
-  </form>
+        </form>
 
-</div>
+    </div>
 
 {% endblock %}
