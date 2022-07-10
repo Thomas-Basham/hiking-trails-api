@@ -1,4 +1,4 @@
-# Lab: DRF API Permissions Postgres
+# Hiking Trails API
 
 **Author:** Thomas Basham
 

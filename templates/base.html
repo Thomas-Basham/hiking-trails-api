@@ -20,7 +20,7 @@
     <br>
     <br>
     {% for message in messages %}
-        <li {% if message.tags is not "error" %} class="{{ message.tags }} text-center list-unstyled">{{ message }}</li>{% endif %}
+        <li {% if message.tags != "error" %} class="{{ message.tags }} text-center list-unstyled">{{ message }}</li>{% endif %}
     {% endfor %}
     <nav class="navbar navbar-expand-xl navbar-light mt-1 mb-3" style="margin: 0 auto">
         <div class="container-fluid">
