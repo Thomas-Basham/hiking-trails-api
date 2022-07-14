@@ -5,58 +5,58 @@
 
 {% block content %}
 
-        <h1 class="display-3 text-center text-break">API Docs</h1>
+<h1 class="display-3 text-center text-break">API Docs</h1>
 
 <br>
 <br>
 
-    <section class="docs text-center ">
-        <div class="row d-flex justify-content-between">
+<section class="docs text-center ">
+    <div class="row d-flex justify-content-between">
 
-            <div class="docs-content col" >
-                <div>
+        <div class="docs-content col">
+            <div>
                     <span
                             class="item_icon"><img
-                            src="{% static 'images/5506024.png' %}" alt="">
+                            alt="" src="{% static 'images/5506024.png' %}">
                     </span>
-                    <h4 class="">GET API Data</h4>
-                    <p class="">No API key or credentials needed. Simply send a request to
-                        this url</p>
-                    <p class="text-light">
-                        https://trails-api-thomas-basham.herokuapp.com​​/api/v1/hiking-trails/</p>
-</div>
+                <h4 class="">GET API Data</h4>
+                <p class="">No API key or credentials needed. Simply send a request to
+                    this url</p>
+                <p class="text-light">
+                    https://trails-api-thomas-basham.herokuapp.com​​/api/v1/hiking-trails/</p>
             </div>
-
-            <div class="docs-content col">
-                <div>
-
-                    <span
-                        class="item_icon"><img
-                        src="{% static "images/7794628.png" %}" alt="">
-                    </span>
-                    <h4 class="">Post API Data</h4>
-                    <p class="">The easiest way to add data to this API is to <a href="/login">login</a> and
-                        use the form provided&nbsp;</p>
-                    <p class="text-light">&nbsp; &nbsp;&nbsp;</p>
-</div>
-            </div>
-
-            <div class="docs-content col">
-                <div>
-
-                    <span
-                        class="item_icon"><img
-                        src="{% static "images/1442912.png" %}" alt="">
-                    </span>
-                    <h4 class="">Demo</h4>
-                    <p class="">See what <a href="/">I did</a> with the API data! If you have any
-                        suggestions for the api please email me at Bashamtg@gmail.com</p>
-                    <p class="text-light">&nbsp; &nbsp; &nbsp; &nbsp;</p>
-</div>
-            </div>
-
         </div>
 
-    </section>
+        <div class="docs-content col">
+            <div>
+
+                    <span
+                            class="item_icon"><img
+                            images src="{% static "/7794628.png" %}" alt="">
+                    </span>
+                <h4 class="">Post API Data</h4>
+                <p class="">The easiest way to add data to this API is to <a href="/login">login</a> and
+                    use the form provided&nbsp;</p>
+                <p class="text-light">&nbsp; &nbsp;&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="docs-content col">
+            <div>
+
+                    <span
+                            class="item_icon"><img
+                            images src="{% static "/1442912.png" %}" alt="">
+                    </span>
+                <h4 class="">Demo</h4>
+                <p class="">See what <a href="/">I did</a> with the API data! If you have any
+                    suggestions for the api please email me at Bashamtg@gmail.com</p>
+                <p class="text-light">&nbsp; &nbsp; &nbsp; &nbsp;</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock content %}

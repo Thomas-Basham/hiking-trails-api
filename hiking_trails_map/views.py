@@ -13,15 +13,16 @@ from hiking_trails_api.models import HikingTrails
 def maps(request):
     current_user = request.user
     df = read_frame(HikingTrails.objects.all())
-    map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype('float').mean().to_list())  # Starts zoom at average of lat/lon from pandas
+    map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype(
+        'float').mean().to_list())  # Starts zoom at average of lat/lon from pandas
     marker_cluster = MarkerCluster().add_to(map)  # Start a cluster to add to
 
     for i, r in df.iterrows():
         html = f'''
         <h2 >{r["trail_name"].capitalize()}<h2/>
-        <a style="color:blue" href="{r["google_maps_directions"]}" target="_blank">Directions via Googlemaps <a/>
+        <a style="color:blue" href="{r["google_maps_directions"]}" target="_blank" rel="noreferrer">Directions via Googlemaps <a/>
         <br>
-        <a style="color:green" href="{r["all_trails_link"]}" target="_blank">Link to All-Trails site<a/>
+        <a style="color:green" href="{r["wta_link"]}" target="_blank">Link to WTA Page<a/>
         <p >{r["description"]}<p/>
         '''
         popup = folium.Popup(html, max_width=500)
@@ -60,7 +61,7 @@ def register_request(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect("login")
+            return redirect("maps")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
@@ -96,10 +97,11 @@ def add_trail_form(request):
     context["dataset"] = HikingTrails.objects.all().order_by("-id")
     context["current_user"] = request.user
     if request.method == 'POST':
-        form = AddTrailForm(request.POST, request.FILES)
-        context['posted'] = form.instance
+        form = AddTrailForm(request.POST)
         if form.is_valid():
-            form.save()
+            stock = form.save(commit=False)
+            stock.owner = request.user
+            stock.save()
         return redirect('maps')
 
     return render(request, 'add_trail_form.html', context)
@@ -108,7 +110,10 @@ def add_trail_form(request):
 class AddTrailForm(ModelForm):
     class Meta:
         model = HikingTrails
-        fields = "__all__"
+        fields = ["wta_link", "description"]
+        labels = {"wta_link": "WTA Link"}
+        help_texts = {"wta_link": "Ex: https://www.wta.org/go-hiking/hikes/talapus-and-olallie-lakes "}
+
 
 
 def documentation(request):
