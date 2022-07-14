@@ -2,7 +2,7 @@ main {
     background-color: #0B2B40;
     margin-bottom: 200px;
     color: whitesmoke;
-
+    min-height: 70vh;
 }
 
 .display-3 {
@@ -103,3 +103,14 @@ small {
     color: whitesmoke !important;
 }
 
+.hiker-list {
+    margin: 50px auto ;
+    width: 80vw;
+        border: solid #1E5959 25px;
+}
+
+
+small {
+        color: #6c757d !important;
+
+}

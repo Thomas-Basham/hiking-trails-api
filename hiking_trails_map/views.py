@@ -8,6 +8,7 @@ import folium
 from folium.plugins import MarkerCluster, Fullscreen
 from django.forms import ModelForm
 from hiking_trails_api.models import HikingTrails
+from django.contrib.auth import get_user_model
 
 
 def maps(request):
@@ -20,7 +21,7 @@ def maps(request):
     for i, r in df.iterrows():
         html = f'''
         <h2 >{r["trail_name"].capitalize()}<h2/>
-        <a style="color:blue" href="{r["google_maps_directions"]}" target="_blank" rel="noreferrer">Directions via Googlemaps <a/>
+        <a style="color:blue" href="{r["google_maps_directions"]}" target="_blank" rel="nofollow" >Directions via Googlemaps <a/>
         <br>
         <a style="color:green" href="{r["wta_link"]}" target="_blank">Link to WTA Page<a/>
         <p >{r["description"]}<p/>
@@ -115,7 +116,13 @@ class AddTrailForm(ModelForm):
         help_texts = {"wta_link": "Ex: https://www.wta.org/go-hiking/hikes/talapus-and-olallie-lakes "}
 
 
-
 def documentation(request):
     context = dict(current_user=request.user)
     return render(request, 'documentation.html', context)
+
+
+def hikers(request):
+    context = dict(all_users=get_user_model().objects.all())
+    context["all_trails"] = HikingTrails.objects.all().order_by("trail_name")
+
+    return render(request, 'hikers.html', context)

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Hikers {% endblock %}
+
+{% block content %}
+
+<h1 class="display-3 text-center text-break">API Docs</h1>
+
+<br>
+<br>
+
+<div class="list-group hiker-list">
+    {% for user in all_users %}
+    {% if user.username != 'admin' %}
+  <div href="#" class="list-group-item" aria-current="true"
+    style="background-color: #0C7D74"
+  >
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{user}}</h5>
+      <small>Joined {{user.date_joined}}</small>
+    </div>
+    <p class="mb-1">{{user}} added: </p>
+    {% for trail in all_trails %}
+    {% if trail.owner == user %}
+    <small>{{trail.trail_name}}</small>
+    {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+    {% endfor %}
+</div>
+
+{% endblock content %}
