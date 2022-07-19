@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import maps, register_request,\
+from .views import maps, register_request, \
     login_request, logout_request, add_trail_form, documentation, hikers
 
 urlpatterns = [

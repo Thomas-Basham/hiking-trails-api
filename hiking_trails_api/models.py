@@ -31,6 +31,5 @@ class HikingTrails(models.Model):
             time.sleep(1)
             self.lat = lat_lon[0]
             self.lon = lat_lon[1]
-            
+
         super().save(*args, **kwargs)
-    

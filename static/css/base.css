@@ -104,13 +104,13 @@ small {
 }
 
 .hiker-list {
-    margin: 50px auto ;
+    margin: 50px auto;
     width: 80vw;
-        border: solid #1E5959 25px;
+    border: solid #1E5959 25px;
 }
 
 
 small {
-        color: #6c757d !important;
+    color: #6c757d !important;
 
 }

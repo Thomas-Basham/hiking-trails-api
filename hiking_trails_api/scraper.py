@@ -49,6 +49,3 @@ def scrape_google_directions(url_string):
     child = found_text.findChildren("a", recursive=False, href=True)[0]['href']
     child = child.strip('/')
     return child
-
-
-
