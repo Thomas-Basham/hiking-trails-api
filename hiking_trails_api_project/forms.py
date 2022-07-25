@@ -12,12 +12,12 @@ class NewUserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("email", "password1", "password2")
+        fields = ("username", "password1", "password2")
 
     def save(self, commit=True):
         user = super(NewUserForm, self).save(commit=False)
+        user.username = self.cleaned_data['username'].lower()
         user.email = self.cleaned_data['email'].lower()
-        user.username = self.cleaned_data['email'].lower()
 
         if commit:
             user.save()
@@ -31,9 +31,9 @@ class UserLoginForm(AuthenticationForm):
         super(UserLoginForm, self).__init__(*args, **kwargs)
 
     username = UsernameField(widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholder': 'someone@email.com', 'for': 'Email'}
+        attrs={'class': 'form-control', 'placeholder': '', 'for': 'username'}
     ),
-        label=_("Email")
+        label=_("Username")
 
     )
     password = forms.CharField(widget=forms.PasswordInput(
@@ -44,20 +44,3 @@ class UserLoginForm(AuthenticationForm):
     ))
 
 
-# So that you can log into admin with email instead of username
-class CustomAdminAuthenticationForm(AdminAuthenticationForm):
-    """
-    A custom authentication form used in the admin app.
-    """
-    error_messages = {
-        **AuthenticationForm.error_messages,
-        'invalid_login': _(
-            "Please enter the correct phone number or email and password for a staff "
-            "account. Note that both fields may be case-sensitive."
-        ),
-    }
-
-    username = UsernameField(
-        label='Email',
-        widget=forms.TextInput(attrs={'autofocus': True})
-    )
