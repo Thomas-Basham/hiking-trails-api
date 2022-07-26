@@ -36,7 +36,7 @@ env = environ.Env(
     DATABASE_PASSWORD=(str, ""),
     DATABASE_HOST=(str, ""),
     DATABASE_PORT=(int, 5432),
-    HEROKU_SETTINGS=(bool, True),
+    HEROKU_SETTINGS=(bool, False),
 
 )
 
