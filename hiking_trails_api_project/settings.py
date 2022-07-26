@@ -37,7 +37,7 @@ env = environ.Env(
     DATABASE_HOST=(str, ""),
     DATABASE_PORT=(int, 5432),
     HEROKU_SETTINGS=(bool, False),
-
+    SECRET_KEY=(str, "secret123")
 )
 
 environ.Env.read_env()
