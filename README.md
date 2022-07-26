@@ -1,5 +1,7 @@
 # Hiking Trails API
 
+[![Django CI](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml/badge.svg)](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml)
+
 **Author:** Thomas Basham
 
 ## [trails-api-thomas-basham.herokuapp.com](https://trails-api-thomas-basham.herokuapp.com)
