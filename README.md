@@ -6,6 +6,8 @@
 
 ## [trails-api-thomas-basham.herokuapp.com](https://trails-api-thomas-basham.herokuapp.com)
 
+A Full-Stack Django Rest Framework API used to for for storing favorite hiking trails 
+
 ## tech Used
 
         Django Rest Framework
