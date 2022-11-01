@@ -17,7 +17,7 @@ class HikingTrails(models.Model):
     def __str__(self):
         return self.trail_name
 
-    # take the wta link
+    # use the wta link to get trail data
     def save(self, *args, **kwargs):
         if not self.pk and not self.lat:
             url_string = self.wta_link

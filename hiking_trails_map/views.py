@@ -9,7 +9,9 @@ from folium.plugins import MarkerCluster, Fullscreen
 from django.forms import ModelForm
 from hiking_trails_api.models import HikingTrails
 from django.contrib.auth import get_user_model
-
+from django.views.generic import (
+    UpdateView,
+)
 
 def maps(request):
     current_user = request.user
@@ -116,6 +118,11 @@ class AddTrailForm(ModelForm):
         labels = {"wta_link": "WTA Link"}
         help_texts = {"wta_link": "Ex: https://www.wta.org/go-hiking/hikes/talapus-and-olallie-lakes "}
 
+
+class HikingTrailUpdateView(UpdateView):
+    template_name = "trail_update.html"
+    model = HikingTrails
+    fields = ['description']
 
 def documentation(request):
     context = dict(current_user=request.user)

@@ -1,0 +1,11 @@
+{% extends 'snack_detail.html' %}
+
+{% block content %}
+
+    <form style="text-align: center; padding: 3vmax;" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="button" type="submit" value="Save Details">
+    </form>
+
+{% endblock %}
