@@ -75,7 +75,6 @@ def login_request(request):
         form = UserLoginForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
-            username = username.lower()
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
@@ -119,7 +118,7 @@ class AddTrailForm(ModelForm):
         help_texts = {"wta_link": "Ex: https://www.wta.org/go-hiking/hikes/talapus-and-olallie-lakes "}
 
 
-class HikingTrailUpdateView(UpdateView):
+class TrailUpdateView(UpdateView):
     template_name = "trail_update.html"
     model = HikingTrails
     fields = ['description']
@@ -131,6 +130,7 @@ def documentation(request):
 
 def hikers(request):
     context = dict(all_users=get_user_model().objects.all())
+    context["current_user"] = request.user
     context["all_trails"] = HikingTrails.objects.all().order_by("trail_name")
-
+    print(context["current_user"])
     return render(request, 'hikers.html', context)
