@@ -114,3 +114,13 @@ small {
     color: #6c757d !important;
 
 }
+
+svg {
+    color: #164773 !important;
+    width: 22px;
+}
+
+svg:hover {
+    filter: brightness(85%);
+    text-decoration: none;
+}
