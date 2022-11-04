@@ -2,10 +2,11 @@
 
 {% block content %}
 
-    <form style="text-align: center; padding: 3vmax;" method="POST">
+    <form class="update-form" style="width: max-content; margin: 0 auto;" method="POST">
+        <h1>Description</h1>
         {% csrf_token %}
         {{ form.as_p }}
-        <input class="button" type="submit" value="Save Details">
+        <input class="button" type="submit" value="Save Details" style="text-align: center; width: 100%;">
     </form>
 
 {% endblock %}
