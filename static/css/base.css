@@ -62,7 +62,7 @@ header {
     width: 80vw;
     margin: 20px auto;
     border: var(--custom-border);
-    border-radius: 30px;
+    border-radius: 22px;
     padding-inline: 15px;
 }
 
@@ -93,8 +93,8 @@ header {
     padding-inline: 20px;
     padding-block: 40px;
     margin-top: 20px;
-    border: solid #1E5959 45px;
-    border-radius: 30px;
+    border: var(--custom-border);
+    border-radius: 22px;
     color: white !important;
 
 }
@@ -125,6 +125,7 @@ small {
 .btn-green {
     background-color: #1E5959 !important;
     color: whitesmoke !important;
+    width: 100%;
 }
 
 .hiker-list {
@@ -150,5 +151,13 @@ svg:hover {
 }
 
 .update-form label{
-    display: none;
+    display: flex;
+    flex-direction: column;
 }
+.update-form input, textarea{
+    width: 100%;
+}
+ textarea, input{
+     border: none;
+     opacity: .7;
+ }

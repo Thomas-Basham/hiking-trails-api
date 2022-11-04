@@ -123,13 +123,9 @@ class AddTrailForm(ModelForm):
 class TrailUpdateForm(ModelForm):
   class Meta:
     model = HikingTrails
-    fields = ["owner", "trail_name", "lat", "lon", "wta_link", "description"]
-    email = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    fields = [ "trail_name", "wta_link", "description"]
 
-  owner = forms.CharField(disabled=True)
   trail_name = forms.CharField(disabled=True)
-  lat = forms.CharField(disabled=True)
-  lon = forms.CharField(disabled=True)
   wta_link = forms.CharField(disabled=True)
 
 

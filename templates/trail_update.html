@@ -1,12 +1,19 @@
-{% extends 'hikers.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
+    {% load crispy_forms_tags %}
 
-    <form class="update-form" style="width: max-content; margin: 0 auto;" method="POST">
-        <h1>Description</h1>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class="button" type="submit" value="Save Details" style="text-align: center; width: 100%;">
-    </form>
+    <h1 class="display-3">Update Trail</h1>
+
+    <br>
+    <br>
+    <div class="container py-5">
+
+        <form class="update-form docs form-group register-form " style="width: 60vw; margin: 0 auto;" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-green" type="submit" value="Save Details" style="text-align: center; width: 100%;">
+        </form>
+    </div>
 
 {% endblock %}
