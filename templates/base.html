@@ -30,7 +30,7 @@
             <div class=" navbar-collapse show" id="navbarToggleExternalContent">
                 <div class="navbar-nav">
                     <a class="nav-link  " href="/hikers">Hikers</a>
-                    {% if not current_user.is_authenticated %}
+                    {% if not request.user.is_active%}
                         <a class="nav-link " href="{% url 'login' %}">Login/Register</a>
                     {% else %}
                         <a class="nav-link " href="{% url 'add_trail_form' %}">Add a Trail</a>

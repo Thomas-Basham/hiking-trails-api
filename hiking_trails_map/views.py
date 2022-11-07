@@ -21,7 +21,7 @@ def maps(request):
   map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype(
     'float').mean().to_list())  # Starts zoom at average of lat/lon from pandas
   marker_cluster = MarkerCluster().add_to(map)  # Start a cluster to add to
-
+  print("CURRENT USER", request.user.is_active)
   for i, r in df.iterrows():
     html = f'''
         <h2 >{r["trail_name"].capitalize()}<h2/>
