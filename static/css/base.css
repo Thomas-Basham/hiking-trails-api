@@ -2,7 +2,9 @@ html,
 body {
     --custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    --custom-bg-color: #0B2B40;
+    /*--custom-bg-color: #0B2B40;*/
+    --custom-bg-color: #84bbae;
+    --custom-bg-color-secondary: #417571;
     --custom-panel-color: #222;
     --custom-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
     --custom-color: #fff;
@@ -10,7 +12,7 @@ body {
     --custom-color-brand-secondary: #0C7D74;
     --custom-color-secondary: #164773;
     --custom-border: solid #1E5959 25px;
-    --custom-border-radius: 5px;
+    --custom-border-radius: 8px;
     --custom-spacing: 5px;
 
 
@@ -22,10 +24,9 @@ body {
 
 
 main {
-    background-color: #0B2B40;
-    margin-bottom: 200px;
+    background-color: var(--custom-bg-color);
     color: whitesmoke;
-    min-height: 70vh;
+    min-height: 98vh;
 }
 
 .display-3 {
@@ -34,7 +35,6 @@ main {
     font-size: 3rem !important;
     float: left;
     padding-left: 10px;
-
 }
 
 .map-container {
@@ -42,19 +42,19 @@ main {
     width: 85vw;
     margin: 50px auto;
 
-    border-radius: 20px;
+    border-radius: 22px;
     max-height: 70vh;
 }
 
 iframe {
-    border-radius: 10px;
+    border-radius: var(--custom-border-radius);
     max-height: 70vh;
     background: #0B2B40 !important;
     background-color: #0B2B40 !important;
 }
 
-header {
-    background-color: #164773;
+header, footer {
+    background-color: var(--custom-bg-color-secondary);
 }
 
 .docs {
@@ -69,9 +69,9 @@ header {
 .docs-content {
     width: 32%;
     background-color: var(--custom-color-brand-secondary);
-    /*filter: brightness(120%);*/
     padding: 30px;
-    border: solid #1E5959 10px;
+    border: solid #1E5959;
+    border-radius: var(--custom-border-radius);
 
 }
 
@@ -83,9 +83,6 @@ header {
     font-size: 10px;
 }
 
-.nav-bottom {
-    background-color: #164773;
-}
 
 .register-form {
 
@@ -101,7 +98,7 @@ header {
 
 .register-form .form-group {
     padding: 5px;
-    border-radius: 10px;
+    border-radius: var(--custom-border-radius);
     overflow: auto;
     overflow-wrap: break-word;
     color: white !important;
@@ -130,8 +127,8 @@ small {
 
 .hiker-list {
     margin: 50px auto;
-    width: 80vw;
-    border: solid #1E5959 25px;
+    width: 60vw;
+    /*border: solid #1E5959 22px;*/
 }
 
 
@@ -150,14 +147,22 @@ svg:hover {
     text-decoration: none;
 }
 
-.update-form label{
+.update-form label {
     display: flex;
     flex-direction: column;
 }
-.update-form input, textarea{
+
+.update-form input, textarea {
     width: 100%;
 }
- textarea, input{
-     border: none;
-     opacity: .7;
- }
+
+textarea, input {
+    border: none;
+    opacity: .7;
+}
+
+@media (max-width: 500px) {
+    .hiker-list {
+        width: 98vw;
+    }
+}
