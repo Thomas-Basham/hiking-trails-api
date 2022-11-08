@@ -26,6 +26,13 @@ A Full-Stack Django Rest Framework API used to for for storing favorite hiking t
 
         Beautiful Soup
 
+<img alt="snap shot" src="static/images/snapshots/snapshot1.png" />
+<img alt="snap shot" src="static/images/snapshots/snapshot2.png" />
+<img alt="snap shot" src="static/images/snapshots/snapshot4.png" />
+<img alt="snap shot" src="static/images/snapshots/snapshot3.png" />
+<img alt="snap shot" src="static/images/snapshots/snapshot5.png" />
+
+
 ### Resources
 
 [Django Documentation](https://docs.djangoproject.com/en/4.1/#getting-help)
