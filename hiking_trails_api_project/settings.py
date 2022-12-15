@@ -16,16 +16,19 @@ import os
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 env = environ.Env(
   DEBUG=(bool, True),
   ENVIRONMENT=(str, "PRODUCTION"),
   ALLOW_ALL_ORIGINS=(bool, False),
   ALLOWED_HOSTS=(list, ['https://trails-api-thomas-basham.herokuapp.com',
-                        'trails-api-thomas-basham.herokuapp.com', ]),
+                        'trails-api-thomas-basham.herokuapp.com',
+                        ]),
   ALLOWED_ORIGINS=(list, []),
-  CSRF_TRUSTED_ORIGINS=(list, []),
+  CSRF_TRUSTED_ORIGINS=(list, ['https://trails-api-thomas-basham.herokuapp.com',
+                              'trails-api-thomas-basham.herokuapp.com',
+                            ]),
   DATABASE_ENGINE=(str, "django.db.backends.sqlite3"),
   DATABASE_NAME=(str, BASE_DIR / "db.sqlite3"),
   DATABASE_USER=(str, ""),
@@ -40,14 +43,16 @@ environ.Env.read_env()
 
 ENVIRONMENT = env.str("ENVIRONMENT")
 
+DEBUG = env.bool("DEBUG")
+ALLOWED_HOSTS = tuple(env.list("ALLOWED_HOSTS"))
+CSRF_TRUSTED_ORIGINS = tuple(env.list("CSRF_TRUSTED_ORIGINS"))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env.str('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://trails-api-thomas-basham.herokuapp.com']
 
@@ -180,10 +185,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-CSRF_TRUSTED_ORIGINS = [
-  'https://trails-api-thomas-basham.herokuapp.com',
-  'trails-api-thomas-basham.herokuapp.com',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#   'https://trails-api-thomas-basham.herokuapp.com',
+#   'trails-api-thomas-basham.herokuapp.com',
+# ]
 # Use Database setttings from heroku postgres
 # if env.bool('HEROKU_SETTINGS'):
 #     django_heroku.settings(locals())
