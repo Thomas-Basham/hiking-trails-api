@@ -41,6 +41,7 @@ ENVIRONMENT = env.str("ENVIRONMENT")
 
 DEBUG = env.bool("DEBUG")
 ALLOWED_HOSTS = tuple(env.list("ALLOWED_HOSTS"))
+CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
