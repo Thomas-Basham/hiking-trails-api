@@ -23,3 +23,4 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.3
 termcolor==2.1.1
 urllib3==1.26.13
+whitenoise==6.2.0
