@@ -25,7 +25,8 @@ env = environ.Env(
     DEBUG=(bool, True),
     ENVIRONMENT=(str, "PRODUCTION"),
     ALLOW_ALL_ORIGINS=(bool, False),
-    ALLOWED_HOSTS=(list, []),
+    ALLOWED_HOSTS=(list, ['https://trails-api-thomas-basham.herokuapp.com',
+                          'trails-api-thomas-basham.herokuapp.com', ]),
     ALLOWED_ORIGINS=(list, []),
     CSRF_TRUSTED_ORIGINS=(list, []),
     DATABASE_ENGINE=(str, "django.db.backends.sqlite3"),
@@ -186,7 +187,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://trails-api-thomas-basham.herokuapp.com', 
+    'https://trails-api-thomas-basham.herokuapp.com',
+    'trails-api-thomas-basham.herokuapp.com',
 ]
 # Use Database setttings from heroku postgres
 # if env.bool('HEROKU_SETTINGS'):
