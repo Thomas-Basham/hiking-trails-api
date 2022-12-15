@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
 import dj_database_url
 import dotenv
 from dotenv import load_dotenv
@@ -191,7 +190,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://trails-api-thomas-basham.herokuapp.com', 
 ]
 # Use Database setttings from heroku postgres
-if env.bool('HEROKU_SETTINGS'):
-    django_heroku.settings(locals())
+# if env.bool('HEROKU_SETTINGS'):
+#     django_heroku.settings(locals())
 
 X_FRAME_OPTIONS = 'ALLOW-FROM https://thomasbashamportfolio.net'
