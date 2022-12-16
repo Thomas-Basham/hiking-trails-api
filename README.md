@@ -12,7 +12,9 @@
 ![Python application](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-A Full-Stack Django Rest Framework API used to for for storing favorite hiking trails. 
+A Full-Stack Django Rest Framework API used to for for storing favorite hiking trails.
+Once logged in, users can add a trail by simply pasting a link from [WTA.org](https://www.wta.org),
+where the data is scraped to build the map.
 
 ## Tech Used
 
@@ -31,7 +33,6 @@ A Full-Stack Django Rest Framework API used to for for storing favorite hiking t
 <img alt="snap shot" src="static/images/snapshots/snapshot4.png" />
 <img alt="snap shot" src="static/images/snapshots/snapshot3.png" />
 <img alt="snap shot" src="static/images/snapshots/snapshot5.png" />
-
 
 ### Resources
 
