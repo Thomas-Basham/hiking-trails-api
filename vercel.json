@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "hiking_trails_api_project/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "hiking_trails_api_project/wsgi.py"
+    }
+  ]
+}
