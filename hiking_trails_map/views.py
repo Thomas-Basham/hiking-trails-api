@@ -1,28 +1,28 @@
-from django.shortcuts import render, redirect
-from django_pandas.io import read_frame
 from hiking_trails_api_project.forms import NewUserForm, UserLoginForm
+from hiking_trails_api.models import HikingTrails
+from django import forms
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm
-import folium
+from django.contrib.auth import login, logout, authenticate, get_user_model
+from django.contrib.auth.models import User
 from folium.plugins import MarkerCluster, Fullscreen
 from django.forms import ModelForm
-from django import forms
-from hiking_trails_api.models import HikingTrails
-from django.contrib.auth import get_user_model
 from django.views.generic import (
-  UpdateView,
+  UpdateView
 )
+import pandas as pd
+import folium
 
 
 def maps(request):
   current_user = request.user
-  df = read_frame(HikingTrails.objects.all())
+  df = pd.DataFrame(list(HikingTrails.objects.all().values()))
+  print(df)
   map = folium.Map(zoom_start=7, location=df[["lat", "lon"]].astype(
     'float').mean().to_list())  # Starts zoom at average of lat/lon from pandas
   marker_cluster = MarkerCluster().add_to(map)  # Start a cluster to add to the map
   for i, r in df.iterrows():
-    if current_user.username == r["owner"]:
+    if current_user.id == r["owner_id"]:
       edit_button = f'''
         <a style="float: right" href="{r["id"]}/trail-update/" title="Edit Trail" target="_parent">
           <svg style="width: 20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-1 h-1">
@@ -38,7 +38,7 @@ def maps(request):
     html = f'''
         {edit_button}
         <h2 style="cursor: default" >{r["trail_name"].capitalize()}<h2/>
-        <small  style="cursor: default">Added by <strong>{r["owner"]}</strong> </small>
+        <small  style="cursor: default">Added by <strong>{User.objects.get(id=r["owner_id"])}</strong> </small>
         <br>
         <a style="color:blue" href="{r["google_maps_directions"]}" target="_blank" rel="nofollow" >Directions via Googlemaps <a/>
         <br>
