@@ -2,10 +2,7 @@
   "builds": [
     {
       "src": "hiking_trails_api_project/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
