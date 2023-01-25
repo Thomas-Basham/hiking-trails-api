@@ -33,4 +33,4 @@ RUN adduser -D myuser
 USER myuser
 
 # run gunicorn
-CMD gunicorn hiking_trails_api_project.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn hiking_trails_api_project.wsgi:app --bind 0.0.0.0:8000
