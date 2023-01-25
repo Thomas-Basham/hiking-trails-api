@@ -2,7 +2,7 @@
 
 **Author:** Thomas Basham
 
-[trails-api-thomas-basham.herokuapp.com](https://trails-api-thomas-basham.herokuapp.com)
+[https://hiking-trails-api.vercel.app](https://hiking-trails-api.vercel.app/)
 
 [![Django CI](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml/badge.svg)](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml)
 
