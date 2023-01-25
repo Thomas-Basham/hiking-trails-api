@@ -4,7 +4,7 @@
 
 [trails-api-thomas-basham.herokuapp.com](https://trails-api-thomas-basham.herokuapp.com)
 
-[![Django CI](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml/badge.svg?branch=main)](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml)
+[![Django CI](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml/badge.svg)](https://github.com/Thomas-Basham/hiking-trails-api/actions/workflows/django.yml)
 
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![PostgresQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
